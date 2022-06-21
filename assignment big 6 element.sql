@@ -7,7 +7,10 @@ email, store_id from staff;
 
 -- 2. count of inventory items held at each store
 select * from inventory;
-select count(*) from inventory where store_id =1;
+select store_id,
+count(inventory_id) as inventory_items
+from inventory
+group by store_id;
 /* no. of  inventory items held at store 1 are 2270
  and no of inventory items held at store 2 are 2311
  */
